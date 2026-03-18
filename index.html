@@ -7,215 +7,499 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        :root {
+            --primary: #577DF3;
+            --secondary: #FF5E63;
+            --black: #141210;
+            --black-secondary: #303535;
+            --white: #ffffff;
+            --dark-blue: #10273F;
+            --light-green: #7DC111;
+            --dark-green: #033627;
+            --light-red: #F75769;
+            --heading-color: #202430;
+            --body-color: #474C63;
+            --brand-white: #F6F6F2;
+            --nav-text: #11213A;
+            --cta-blue: #3467EB;
+            --cta-blue-hover: #2458DE;
+            --footer-bg-start: #DAE2FB;
+            --footer-bg-end: #FFFBFB;
+            --footer-color: #202430;
+            --footer-bg: #CAEBFF;
+        }
+        body { font-family: 'Roboto Condensed', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', sans-serif; }
+        .cta-primary {
+            background-color: var(--cta-blue);
+            color: #FFF;
+            border-radius: 100px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .cta-primary:hover { background-color: var(--cta-blue-hover); }
+        .cta-secondary {
+            background-color: var(--light-red);
+            color: #FFF;
+            border-radius: 100px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .cta-secondary:hover { background-color: #E53D4F; }
+        .cta-tertiary {
+            background-color: #8EC63F;
+            color: #FFF;
+            border-radius: 100px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .cta-tertiary:hover { background-color: #78AF2A; }
+        .cta-clean {
+            background: transparent;
+            color: var(--cta-blue);
+            padding: 8px 0;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .cta-clean:hover { color: var(--cta-blue-hover); }
+        .cta-clean-secondary {
+            background: transparent;
+            color: var(--light-red);
+            padding: 8px 0;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .cta-clean-secondary:hover { color: #E53D4F; }
+        .cta-arrow {
+            display: inline-block;
+            width: 16px;
+            height: 12px;
+        }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased" style="background-color: var(--white);">
+
+    <!-- Navigation -->
+    <nav style="background-color: #FFF; border-bottom: 1px solid var(--brand-white);" class="fixed top-0 w-full z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <span style="color: var(--nav-text);" class="text-xl font-bold" style="font-family: 'Raleway', sans-serif;">Hvabe<span style="color: var(--light-green);">Hager</span></span>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#" style="color: var(--nav-text);" class="text-sm font-medium hover:opacity-70 transition-opacity">Tjenester</a>
+                <a href="#" style="color: var(--nav-text);" class="text-sm font-medium hover:opacity-70 transition-opacity">Referanser</a>
+                <a href="#" style="color: var(--nav-text);" class="text-sm font-medium hover:opacity-70 transition-opacity">Blogg</a>
+                <a href="#" style="color: var(--nav-text);" class="text-sm font-medium hover:opacity-70 transition-opacity">Om oss</a>
+                <a href="#kontakt" style="color: var(--nav-text);" class="text-sm font-medium hover:opacity-70 transition-opacity">Kontakt oss</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section style="background-color: #10273F;" class="relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 py-24 md:py-36 text-center relative z-10">
-            <div class="mb-8">
-                <span class="text-white text-3xl md:text-4xl font-extrabold tracking-tight">Hva<span style="color: #FF5E63;">Behager</span></span>
-            </div>
-            <h1 class="text-white text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                Tekster som faktisk <span style="color: #577DF3;">selger</span>
-            </h1>
-            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                Du fortjener tekster som jobber like hardt som deg. Tekster som fanger oppmerksomhet, bygger tillit og f&aring;r folk til &aring; trykke p&aring; den knappen.
-            </p>
-            <a href="#kontakt" style="background-color: #FF5E63;" class="inline-block text-white font-semibold text-lg px-8 py-4 rounded-lg hover:opacity-90 transition-opacity shadow-lg">
-                F&aring; tekster som konverterer
-            </a>
-        </div>
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-10 left-10 w-64 h-64 rounded-full" style="background-color: #577DF3; filter: blur(100px);"></div>
-            <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full" style="background-color: #FF5E63; filter: blur(120px);"></div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section style="background-color: #F6F6F2;">
-        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-6" style="color: #202430;">
-                Kjenner du deg igjen?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 mt-10">
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <span style="color: #FF5E63;" class="text-2xl mt-1 flex-shrink-0">&#10007;</span>
-                        <p class="text-lg leading-relaxed" style="color: #474C63;">
-                            Du poster p&aring; alle kanaler &mdash; Instagram, nyhetsbrev, nettside, LinkedIn &mdash; men engasjementet er d&oslash;dt. Ingen liker. Ingen klikker. Ingen kj&oslash;per.
-                        </p>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <span style="color: #FF5E63;" class="text-2xl mt-1 flex-shrink-0">&#10007;</span>
-                        <p class="text-lg leading-relaxed" style="color: #474C63;">
-                            Du sitter foran skjermen og pr&oslash;ver &aring; skrive noe lurt, men det ender alltid opp med de samme kjedelige frasene. &laquo;Vi er lidenskapelig opptatt av...&raquo; G&aring; hjem.
-                        </p>
-                    </div>
-                </div>
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <span style="color: #FF5E63;" class="text-2xl mt-1 flex-shrink-0">&#10007;</span>
-                        <p class="text-lg leading-relaxed" style="color: #474C63;">
-                            Du vet at innholdet ditt burde v&aelig;re bedre, men du har hverken tid eller energi til &aring; finne ut av det selv. Det f&oslash;les som et hamsterhjul.
-                        </p>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <span style="color: #FF5E63;" class="text-2xl mt-1 flex-shrink-0">&#10007;</span>
-                        <p class="text-lg leading-relaxed" style="color: #474C63;">
-                            Du har kanskje pr&oslash;vd AI-verkt&oslash;y, men tekstene h&oslash;res ut som en robot med identitetskrise. De mangler stemmen din.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <p class="mt-10 text-xl font-semibold" style="color: #202430;">
-                Det er ikke du det er noe galt med. Det er tekstene.
-            </p>
-        </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="bg-white">
-        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-4" style="color: #202430;">
-                Det er her jeg kommer inn
-            </h2>
-            <p class="text-lg mb-12" style="color: #474C63;">
-                Jeg hjelper deg med &aring; f&aring; tekster som treffer &mdash; enten jeg skriver dem for deg, eller l&aelig;rer deg &aring; gj&oslash;re det selv.
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="p-8 rounded-xl border-2 border-gray-100 hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background-color: #577DF3;">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: #202430;">Copywriting</h3>
-                    <p style="color: #474C63;" class="leading-relaxed">
-                        Nettsider, annonser, nyhetsbrev, landingssider &mdash; tekster som f&aring;r folk til &aring; stoppe opp, lese og handle. Skreddersydd til din stemme og ditt publikum.
+    <section style="background-color: #FBFBFF;" class="relative overflow-hidden pt-20">
+        <div class="max-w-6xl mx-auto px-6 py-24 md:py-36">
+            <div class="md:flex items-center gap-12">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6" style="color: var(--heading-color);">
+                        Ute etter treffsikre tekster som synger og selger?
+                    </h1>
+                    <p class="text-lg mb-4" style="color: var(--primary); font-weight: 500;">
+                        Vi liker deg allerede.
                     </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="w-72 h-72 rounded-2xl overflow-hidden" style="background-color: var(--brand-white);">
+                        <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(to right, rgba(250,250,254,1), rgba(255,251,251,1));">
+                            <span style="color: var(--primary);" class="text-6xl font-bold">C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blocks Section - "Hva står øverst på ønskelista?" -->
+    <section style="background-color: #FFF;">
+        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center" style="color: var(--heading-color);">
+                Hva står øverst på ønskelista i dag?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="text-center">
+                    <div class="w-full h-48 rounded-xl mb-6" style="background-color: var(--brand-white);"></div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--heading-color);">Jeg trenger hjelp med tekst og markedsføring</h3>
+                    <p style="color: var(--black-secondary);" class="leading-relaxed mb-4">
+                        Flaks! Det har nemlig v&aelig;rt v&aring;r stolte nisje i 15 &aring;r. La oss skrive tekstene som gj&oslash;r at du selger flere produkter, f&aring;r flere kunder, blir mer synlig og tiltrekker deg de rette folka.
+                    </p>
+                    <a href="#" class="cta-primary">
+                        Dette vil jeg h&oslash;re mer om
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-48 rounded-xl mb-6" style="background-color: var(--brand-white);"></div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--heading-color);">Jeg vil bli bedre til &aring; skrive og ser etter kurs</h3>
+                    <p style="color: var(--black-secondary);" class="leading-relaxed mb-4">
+                        Vi har hjulpet utallige bedrifter og markedsf&oslash;rere med &aring; kvesse penna. Book et fysisk kurs, foredrag eller workshop &ndash; eller dykk inn i v&aring;rt nettkurs-univers, Skriveskolen.
+                    </p>
+                    <a href="#" class="cta-secondary">
+                        JA, jeg vil bli bedre!
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section style="background-color: #FFF;">
+        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4" style="color: #000000;">
+                Klart vi digger kundene v&aring;re
+            </h2>
+            <h4 class="font-bold mb-10" style="color: #000000;">
+                (Spesielt de som sier fine ting om oss)
+            </h4>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg leading-relaxed italic mb-8" style="color: var(--black-secondary);">
+                    &laquo;Jeg doblet nesten salgene f&oslash;rste gang jeg fikk hjelp med teksten og m&aring;let vi hadde satt ble sprengt! Ikke n&oslash;l med &aring; f&aring; hjelp, du kommer ikke til &aring; angre om du samarbeider med denne dyktige gjengen.&raquo;
+                </p>
+                <p class="font-semibold" style="color: var(--heading-color);">Elisabeth Andersen,</p>
+                <p style="color: var(--body-color);">Helsefysio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - "Hva kan vi gjøre for deg?" -->
+    <section style="background-color: #FFF;">
+        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-center" style="color: var(--heading-color);">
+                Hva kan vi gj&oslash;re for deg?
+            </h2>
+            <p class="text-lg mb-12 text-center" style="color: var(--body-color);">
+                V&aring;r jobb er &aring; skape resultater. Det gj&oslash;r vi med tekster preppet og rigget for &aring; f&aring; kundene dine til &aring; si JA.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="text-center">
+                    <div class="w-full h-40 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h4 class="text-lg font-bold mb-3" style="color: var(--heading-color);">Skill deg ut</h4>
+                    <p style="color: var(--body-color);" class="leading-relaxed text-sm mb-4">
+                        Med en unik tone of voice og knakende godt innhold, s&oslash;rger vi for at b&aring;de X- og WOW-faktoren skinner gjennom.
+                    </p>
+                    <a href="#" class="cta-primary text-sm">
+                        Finn stemmen til bedriften din
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                        </svg>
+                    </a>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="p-8 rounded-xl border-2 border-gray-100 hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background-color: #577DF3;">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: #202430;">Tone of Voice</h3>
-                    <p style="color: #474C63;" class="leading-relaxed">
-                        Hvordan h&oslash;res merkevaren din ut? Jeg hjelper deg med &aring; definere en stemme som er unik, gjenkjennelig og konsistent &mdash; p&aring; tvers av alle kanaler.
+                <div class="text-center">
+                    <div class="w-full h-40 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h4 class="text-lg font-bold mb-3" style="color: var(--heading-color);">Øk salget</h4>
+                    <p style="color: var(--body-color);" class="leading-relaxed text-sm mb-4">
+                        Kampanjer og annonsering, nettsider og salgssider, e-postmarkedsf&oslash;ring og SEO &ndash; vi fikser biffen.
                     </p>
+                    <a href="#" class="cta-primary text-sm">
+                        F&aring; kundene p&aring; kroken
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                        </svg>
+                    </a>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="p-8 rounded-xl border-2 border-gray-100 hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background-color: #577DF3;">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                <div class="text-center">
+                    <div class="w-full h-40 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h4 class="text-lg font-bold mb-3" style="color: var(--heading-color);">Surf p&aring; AI-b&oslash;lgen</h4>
+                    <p style="color: var(--body-color);" class="leading-relaxed text-sm mb-4">
+                        Oppdag hvordan du utnytter kunstig intelligens og verkt&oslash;y som ChatGPT i tekst- og innholdsproduksjon.
+                    </p>
+                    <a href="#" class="cta-primary text-sm">
+                        Hils p&aring; skriverobotene
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
                         </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: #202430;">AI-skrivekurs</h3>
-                    <p style="color: #474C63;" class="leading-relaxed">
-                        L&aelig;r &aring; bruke AI som et skriveverkt&oslash;y &mdash; uten &aring; miste stemmen din. Praktisk oppl&aelig;ring som gir deg b&aring;de fart og kvalitet.
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="text-center">
+                    <div class="w-full h-40 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h4 class="text-lg font-bold mb-3" style="color: var(--heading-color);">Skriv bedre</h4>
+                    <p style="color: var(--body-color);" class="leading-relaxed text-sm mb-4">
+                        Ta et nettkurs eller book en av v&aring;re rutinerte tekstforfattere til &aring; skreddersy en workshop, kurs eller foredrag.
                     </p>
+                    <a href="#" class="cta-secondary text-sm">
+                        Vis meg skrivekursene
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Results / Testimonial Section -->
-    <section style="background-color: #10273F;">
-        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28 text-center">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">
-                Resultater som snakker for seg
-            </h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="mb-10 p-8 md:p-12 rounded-2xl" style="background-color: rgba(87, 125, 243, 0.15);">
-                    <div class="mb-6">
-                        <span class="text-6xl md:text-7xl font-extrabold" style="color: #7DC111;">270%</span>
-                    </div>
-                    <p class="text-white text-xl md:text-2xl font-semibold mb-4">
-                        &oslash;kning i salg
-                    </p>
-                    <p class="text-gray-300 text-lg leading-relaxed">
-                        En kunde kom til meg med en nettside som s&aring; fin ut, men som ikke solgte. Vi skrev om alle tekstene &mdash; fra overskrifter til produktbeskrivelser til CTA-knapper. Resultatet? <span class="text-white font-semibold">270% &oslash;kning i salg</span> p&aring; tre m&aring;neder. Fordi de rette ordene gj&oslash;r hele forskjellen.
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div>
-                        <p class="text-3xl font-bold" style="color: #577DF3;">50+</p>
-                        <p class="text-gray-400 mt-1">forn&oslash;yde kunder</p>
-                    </div>
-                    <div>
-                        <p class="text-3xl font-bold" style="color: #577DF3;">15 &aring;r</p>
-                        <p class="text-gray-400 mt-1">med teksterfaring</p>
-                    </div>
-                    <div>
-                        <p class="text-3xl font-bold" style="color: #577DF3;">1000+</p>
-                        <p class="text-gray-400 mt-1">tekster levert</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section style="background-color: #F6F6F2;">
+    <!-- Card Section - "Gode råd er ikke alltid dyre" (on blue background) -->
+    <section style="background: linear-gradient(rgba(87, 125, 243, 1), rgba(87, 125, 243, 1));">
         <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
-            <div class="md:flex items-center gap-16">
-                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
-                    <div class="w-56 h-56 rounded-full flex items-center justify-center" style="background-color: #577DF3;">
-                        <span class="text-white text-6xl font-bold">C</span>
-                    </div>
+            <div class="p-10 md:p-16 rounded-[40px] md:flex items-center gap-12" style="background-color: #FFF;">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="w-full h-64 rounded-xl" style="background-color: var(--brand-white);"></div>
                 </div>
-                <div class="md:w-2/3">
-                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6" style="color: #202430;">
-                        Hei, jeg er Camilla
-                    </h2>
-                    <p class="text-lg leading-relaxed mb-4" style="color: #474C63;">
-                        I over 15 &aring;r har jeg skrevet tekster som f&aring;r folk til &aring; handle. Ikke fordi jeg bruker smarte triks, men fordi jeg forst&aring;r hva som f&aring;r mennesker til &aring; si ja.
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--heading-color);">
+                        Gode r&aring;d er ikke alltid dyre
+                    </h3>
+                    <p class="mb-6" style="color: var(--body-color);">
+                        Meld deg p&aring; e-postlista, og f&aring; gratis skrivetips rett i innboksen.
                     </p>
-                    <p class="text-lg leading-relaxed mb-4" style="color: #474C63;">
-                        Jeg har jobbet med alt fra sm&aring; gr&uuml;ndere til store merkevarer, og en ting g&aring;r igjen: De beste tekstene kommer n&aring;r du t&oslash;r &aring; snakke som et menneske. Direkte. Varmt. Ekte.
-                    </p>
-                    <p class="text-lg leading-relaxed" style="color: #474C63;">
-                        HvaBehager handler om akkurat det &mdash; &aring; finne ordene som f&oslash;les riktige og som faktisk virker. Ingen bullshit. Ingen tomme buzzwords. Bare tekster som treffer.
-                    </p>
+                    <a href="#" class="cta-tertiary">
+                        Sign me up, please!
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="kontakt" class="bg-white">
-        <div class="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-6" style="color: #202430;">
-                La oss snakke om tekstene dine
+    <!-- Partners Section -->
+    <section style="background-color: #FFF;">
+        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-12" style="color: var(--heading-color);">
+                Selskaper som har skutt fart med v&aring;re tekster og kurs
             </h2>
-            <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: #474C63;">
-                Klar for tekster som faktisk gj&oslash;r en forskjell? Book en uforpliktende prat, s&aring; finner vi ut hvordan jeg kan hjelpe deg best.
-            </p>
-            <a href="#" style="background-color: #FF5E63;" class="inline-block text-white font-semibold text-lg px-10 py-4 rounded-lg hover:opacity-90 transition-opacity shadow-lg">
-                Ta kontakt i dag
+            <div class="flex flex-wrap justify-center gap-8 mb-10 opacity-60">
+                <span style="color: var(--heading-color);" class="text-sm font-semibold">Enova</span>
+                <span style="color: var(--heading-color);" class="text-sm font-semibold">SpareBank</span>
+                <span style="color: var(--heading-color);" class="text-sm font-semibold">Kreftforeningen</span>
+                <span style="color: var(--heading-color);" class="text-sm font-semibold">MatPrat</span>
+                <span style="color: var(--heading-color);" class="text-sm font-semibold">Britannia</span>
+                <span style="color: var(--heading-color);" class="text-sm font-semibold">SINTEF</span>
+                <span style="color: var(--heading-color);" class="text-sm font-semibold">Veidekke</span>
+                <span style="color: var(--heading-color);" class="text-sm font-semibold">NTNU</span>
+            </div>
+            <a href="#" class="cta-primary">
+                Bes&oslash;k skrytehj&oslash;rnet
+                <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                    <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                </svg>
             </a>
-            <p class="mt-6 text-sm" style="color: #474C63;">Ingen forpliktelser. Bare en god samtale om hva tekstene dine kan gj&oslash;re for deg.</p>
+        </div>
+    </section>
+
+    <!-- Blog Feed Section -->
+    <section style="background-color: #FFF;">
+        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold" style="color: var(--heading-color);">
+                    Siste sladder fra HvabeHager
+                </h2>
+                <a href="#" class="cta-primary hidden md:inline-flex">
+                    Mer sladder, takk!
+                    <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                        <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="w-full h-48 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h5 class="font-bold mb-2" style="color: var(--heading-color);">3 ChatGPT-funksjoner du b&oslash;r vite om</h5>
+                    <p class="text-sm mb-3" style="color: var(--body-color);">ChatGPT har &oslash;rten funksjoner, og flere lanseres daglig...</p>
+                    <a href="#" class="cta-clean text-sm">
+                        Denne vil jeg lese!
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="#3467EB"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="#3467EB"/>
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <div class="w-full h-48 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h5 class="font-bold mb-2" style="color: var(--heading-color);">Hvordan kan ChatGPT forenkle lederhverdagen?</h5>
+                    <p class="text-sm mb-3" style="color: var(--body-color);">Vurderer du lederutvikling? Ta en kikk p&aring; Storformprogrammet.</p>
+                    <a href="#" class="cta-clean text-sm">
+                        Denne vil jeg lese!
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="#3467EB"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="#3467EB"/>
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <div class="w-full h-48 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h5 class="font-bold mb-2" style="color: var(--heading-color);">Topp 5: Slik ville ledere bruke ChatGPT i 2024</h5>
+                    <p class="text-sm mb-3" style="color: var(--body-color);">Hva ville ledere l&aelig;re om ChatGPT i 2024?...</p>
+                    <a href="#" class="cta-clean text-sm">
+                        Denne vil jeg lese!
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="#3467EB"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="#3467EB"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Offers Section -->
+    <section style="background-color: #FFF;">
+        <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+            <div class="flex items-start justify-between mb-10">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-2" style="color: var(--heading-color);">
+                        Verdt &aring; merke seg
+                    </h2>
+                    <h4 class="text-lg" style="color: var(--heading-color);">
+                        Akkurat n&aring; er dette mest poppis
+                    </h4>
+                </div>
+                <a href="#" class="cta-secondary hidden md:inline-flex">
+                    Se alt av gratis, g&oslash;yale ting
+                    <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="white"/>
+                        <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="w-full h-48 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h5 class="font-bold mb-2" style="color: var(--heading-color);">Skriv s&aring; du f&aring;r JA &ndash; n&aring; med KI-tillegg</h5>
+                    <p class="text-sm mb-3" style="color: var(--body-color);">N&aring; inkludert praktisk ChatGPT-guide og en interaktiv, digital bank med over 50 ChatGPT-instrukser.</p>
+                    <a href="#" class="cta-clean-secondary text-sm">
+                        F&aring; den oppdaterte boka
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="#F75769"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="#F75769"/>
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <div class="w-full h-48 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h5 class="font-bold mb-2" style="color: var(--heading-color);">Se opptak fra digital boklansering</h5>
+                    <p class="text-sm mb-3" style="color: var(--body-color);">Camilla og Christine Calver delte skrivesnacks og KI-hacks. N&aring; kan du se opptaket.</p>
+                    <a href="#" class="cta-clean-secondary text-sm">
+                        Dette vil jeg se!
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="#F75769"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="#F75769"/>
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <div class="w-full h-48 rounded-xl mb-4" style="background-color: var(--brand-white);"></div>
+                    <h5 class="font-bold mb-2" style="color: var(--heading-color);">Kurs og foredrag om ChatGPT</h5>
+                    <p class="text-sm mb-3" style="color: var(--body-color);">Vi skreddersyr et opplegg for nettopp dere.</p>
+                    <a href="#" class="cta-clean-secondary text-sm">
+                        F&aring; vite mer her
+                        <svg class="cta-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9064 5.26611H0V6.73403H11.9064V5.26611Z" fill="#F75769"/>
+                            <path d="M10.4681 11.4712C10.6153 8.50565 12.3044 6.83531 14.9335 6.60394V5.38808C12.3044 5.15672 10.6153 3.49416 10.4681 0.528564L8.64432 0.832524C8.74949 1.90519 8.92523 3.00978 9.55621 3.87212C10.2082 4.71343 10.9373 5.4435 11.7786 5.6959L11.7785 6.30379C10.9372 6.55621 10.2082 7.26523 9.55621 8.12758C8.92523 8.98992 8.74949 10.1156 8.64432 11.1673L10.4681 11.4712Z" fill="#F75769"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner CTA Section -->
+    <section id="kontakt" style="background-color: #577DF3;">
+        <div class="max-w-5xl mx-auto px-6 py-24 md:py-36 text-center">
+            <h2 class="text-3xl md:text-4xl font-light text-white mb-8">
+                Klar for &aring; f&aring; fart p&aring; (skrive)sakene?
+            </h2>
+            <a href="#" class="inline-block">
+                <h2 class="text-3xl md:text-4xl font-semibold text-white hover:opacity-80 transition-opacity">
+                    Snakk med oss, da vel!
+                </h2>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background-color: #10273F;">
-        <div class="max-w-6xl mx-auto px-6 py-10">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <span class="text-white text-xl font-bold">Hva<span style="color: #FF5E63;">Behager</span></span>
-                <p class="text-gray-400 text-sm">&copy; 2026 HvaBehager. Alle rettigheter reservert.</p>
+    <footer style="background: linear-gradient(90deg, #DAE2FB 0%, #FFFBFB 100%);">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <p class="text-lg mb-6" style="color: var(--heading-color); font-family: 'Raleway', sans-serif;">Bruk oss</p>
+                    <ul class="space-y-3">
+                        <li><a href="#" style="color: var(--dark-blue);" class="text-base hover:opacity-70 transition-opacity">Referanser</a></li>
+                        <li><a href="#" style="color: var(--dark-blue);" class="text-base hover:opacity-70 transition-opacity">Skrivekurs</a></li>
+                        <li><a href="#" style="color: var(--dark-blue);" class="text-base hover:opacity-70 transition-opacity">Tekst og markedsf&oslash;ring</a></li>
+                        <li><a href="#" style="color: var(--dark-blue);" class="text-base hover:opacity-70 transition-opacity">Innlogging Skriveskolen</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-lg mb-6" style="color: var(--heading-color); font-family: 'Raleway', sans-serif;">F&oslash;lg oss</p>
+                    <div class="flex gap-4">
+                        <span style="color: var(--dark-blue);" class="text-sm">Facebook</span>
+                        <span style="color: var(--dark-blue);" class="text-sm">Instagram</span>
+                        <span style="color: var(--dark-blue);" class="text-sm">LinkedIn</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-lg mb-6" style="color: var(--heading-color); font-family: 'Raleway', sans-serif;">Finn oss</p>
+                    <div class="space-y-2">
+                        <p style="color: var(--body-color);" class="text-base">camilla@hvabehager.no</p>
+                        <p style="color: var(--body-color);" class="text-base">Innherredsveien 7</p>
+                        <p style="color: var(--body-color);" class="text-base">7014 Trondheim</p>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <div class="mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4" style="border-top: 1px solid rgba(58,104,136,0.2);">
+                <p class="text-sm" style="color: var(--footer-color);">&copy;2024 HvabeHager AS</p>
+                <div class="flex gap-6">
+                    <a href="#" style="color: var(--light-green); font-size: 14px;" class="hover:opacity-70 transition-opacity">Administrer cookies</a>
+                    <a href="#" style="color: var(--light-green); font-size: 14px;" class="hover:opacity-70 transition-opacity">Personvern og s&aring;nn</a>
+                </div>
             </div>
         </div>
     </footer>
